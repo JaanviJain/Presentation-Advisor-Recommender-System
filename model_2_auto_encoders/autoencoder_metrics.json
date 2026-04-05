@@ -1,0 +1,15 @@
+{
+  "model": "CF Autoencoder",
+  "best_config": "{'enc_units': [256, 128], 'latent_dim': 64, 'dropout': 0.2, 'lr': 0.001}",
+  "total_epochs": 43,
+  "training_time": "0:00:17",
+  "best_train_loss": 0.0527,
+  "best_val_loss": 0.0224,
+  "best_train_mae": 0.1819,
+  "best_val_mae": 0.0971,
+  "test_MAE": 0.7861,
+  "test_MSE": 0.7964,
+  "test_RMSE": 0.8924,
+  "paper_MAE": 3.05,
+  "beats_paper": true
+}
