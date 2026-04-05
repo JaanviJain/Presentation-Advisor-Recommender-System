@@ -1,0 +1,15 @@
+{
+  "model": "Hybrid + Custom Embeddings",
+  "best_config": "{'units': [256, 128, 64], 'dropout': 0.3, 'lr': 0.001}",
+  "total_epochs": 68,
+  "training_time": "0:02:07",
+  "best_train_loss": 0.2183,
+  "best_val_loss": 0.2443,
+  "best_train_mae": 0.3349,
+  "best_val_mae": 0.3165,
+  "test_MAE": 0.3324,
+  "test_MSE": 0.2514,
+  "test_RMSE": 0.5014,
+  "paper_MAE": 0.49,
+  "beats_paper": true
+}
