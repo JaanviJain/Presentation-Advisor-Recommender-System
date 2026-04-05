@@ -1,0 +1,11 @@
+{
+  "model": "CBF+CF",
+  "MAE_hybrid": 0.5255,
+  "MSE_hybrid": 0.3908,
+  "RMSE_hybrid": 0.6252,
+  "MAE_cf_only": 0.7464,
+  "MAE_cbf_only": 0.3773,
+  "timing_seconds": 1.12,
+  "paper_MAE": 1.13,
+  "beats_paper": true
+}
