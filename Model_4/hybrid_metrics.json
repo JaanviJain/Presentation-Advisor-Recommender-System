@@ -1,0 +1,15 @@
+{
+  "model": "Hybrid Multi-Tower",
+  "best_config": "{'user_u': 128, 'item_u': 256, 'drop': 0.2, 'lr': 0.001}",
+  "total_epochs": 200,
+  "training_time": "0:07:23",
+  "best_train_loss": 0.0245,
+  "best_val_loss": 0.0239,
+  "best_train_mae": 0.0923,
+  "best_val_mae": 0.0737,
+  "test_MAE": 0.0734,
+  "test_MSE": 0.0259,
+  "test_RMSE": 0.1611,
+  "paper_MAE": 0.11,
+  "beats_paper": true
+}

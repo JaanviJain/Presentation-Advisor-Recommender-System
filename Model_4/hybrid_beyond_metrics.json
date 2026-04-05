@@ -1,0 +1,13 @@
+{
+  "loss": 0.0259,
+  "precision_k": 1.0,
+  "novelty": 0.2653,
+  "serendipity": 0.5,
+  "diversity": 0.4227,
+  "item_coverage": 0.484,
+  "cv_mean_mae": 0.0768,
+  "cv_std_mae": 0.0067,
+  "t_stat": -83.4207,
+  "p_value_t": 0.0,
+  "p_value_w": 0.0625
+}
