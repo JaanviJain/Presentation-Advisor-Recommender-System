@@ -1,0 +1,31 @@
+user_id,type,location,preferences,preferred_presentation_type
+1,manager,Illinois,"['Text heavy', 'Presentation length', 'Powerpoint knowledge']",creative
+2,teacher,Texas,"['Bullets', 'General tips']",creative
+3,manager,Illinois,['Presentation skills'],creative
+4,teacher,New York,['Tables'],creative
+5,specialist,Florida,"['Agenda', 'Bullets', 'Readability', 'Bullets']",formal
+6,technical,California,"['Boring presentation', 'Boring presentation', 'Powerpoint knowledge']",formal
+7,teacher,Illinois,"['Graphics', 'General tips', 'Readability', 'Agenda']",students
+8,researcher,California,"['Readability', 'Bullets', 'Graphics', 'Boring presentation']",kids
+9,student,Texas,['Readability'],kids
+10,technical,Illinois,"['Images', 'Positioning']",students
+11,specialist,Illinois,"['Text heavy', 'Images']",creative
+12,technical,Illinois,['Explanation of the problem'],creative
+13,business,Florida,['General tips'],students
+14,business,Florida,['Boring presentation'],creative
+15,technical,Illinois,['Presentation skills'],formal
+16,student,Texas,"['Powerpoint knowledge', 'Explanation of the problem']",kids
+17,business,Illinois,['Text size'],formal
+18,technical,New York,['Powerpoint knowledge'],formal
+19,technical,New York,"['Positioning', 'Readability', 'Powerpoint knowledge', 'Positioning']",kids
+20,manager,Illinois,"['Infographics', 'Powerpoint knowledge']",kids
+21,manager,Illinois,['Infographics'],creative
+22,business,Texas,"['Text heavy', 'Positioning', 'Graphics']",kids
+23,business,New York,"['Bullets', 'Tables', 'Agenda']",formal
+24,manager,Florida,"['Presentation length', 'Powerpoint knowledge']",formal
+25,manager,Texas,"['Presentation skills', 'Bullets']",kids
+26,specialist,New York,"['Text size', 'Bullets', 'Agenda']",students
+27,specialist,Illinois,"['Consistency', 'Presentation skills', 'Presentation skills', 'tips and tricks']",students
+28,manager,New York,"['Tables', 'Bullets', 'Graphics']",formal
+29,student,Illinois,['Presentation length'],kids
+30,student,Florida,"['Presentation skills', 'Presentation length', 'Explanation of the problem']",students
