@@ -1,0 +1,12 @@
+{
+  "model": "DQN",
+  "MAE": 1.4968,
+  "MSE": 3.3036,
+  "RMSE": 1.8176,
+  "training_time": "0:04:03",
+  "total_steps": 9000,
+  "final_epsilon": 0.05,
+  "avg_reward_ep": 8814.8333,
+  "paper_MAE": 3.22,
+  "beats_paper": true
+}
