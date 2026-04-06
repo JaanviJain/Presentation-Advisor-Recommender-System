@@ -18,23 +18,24 @@ This project builds and evaluates a complete recommender system pipeline for a P
 * Validate that deep hybrid architectures outperform traditional and RL-based approaches on this domain
 
 Repository Structure
+```text
 Presentation-Advisor-Recommender-System/
 ├── Model_1/                        # Baseline Hybrid Approach
-│   ├── model1.ipynb                # CBF & Collaborative Filtering implementation
+│   ├── model1.ipynb                # CBF & Collaborative Filtering
 │   ├── cbf_cf_metrics.json         # Performance metrics
 │   ├── cbf_cf_predictions.csv      # Sample output predictions
-│   └── cbf_cf_results.png          # Visualization of baseline performance
+│   └── cbf_cf_results.png          # Visualization of baseline
 │
 ├── model_2_auto_encoders/          # Neural Network Recommenders
-│   ├── autoencodersmodel2.ipynb    # Deep learning autoencoder implementation
-│   ├── best_autoencoder.keras      # Saved model weights (HDF5 format)
+│   ├── autoencodersmodel2.ipynb    # Deep learning autoencoder
+│   ├── best_autoencoder.keras      # Saved model weights
 │   ├── autoencoder_metrics.json    # Accuracy and loss logs
 │   └── autoencoder_results.png     # Training history plots
 │
 ├── model_3/                        # Reinforcement Learning Agent
 │   ├── model-3-dqn.ipynb           # Deep Q-Network implementation
 │   ├── dqn_model.keras             # Saved RL agent
-│   ├── dqn_metrics.json            # Reward and Q-value tracking
+│   ├── dqn_metrics.json            # Reward tracking
 │   └── dqn_results.png             # Agent performance charts
 │
 ├── Model_4/                        # Optimized Hybrid Model
@@ -45,8 +46,8 @@ Presentation-Advisor-Recommender-System/
 │
 ├── model_5/                        # Embedding-Based Hybrid
 │   ├── model-5.ipynb               # Advanced embeddings (User/Item)
-│   ├── user_encoder.keras          # Serialized user embedding layer
-│   ├── item_encoder.keras          # Serialized item embedding layer
+│   ├── user_encoder.keras          # Serialized user embedding
+│   ├── item_encoder.keras          # Serialized item embedding
 │   └── hybrid_emb_results.png      # Embedding space visualizations
 │
 ├── comparison_results/             # Cross-Model Evaluation
@@ -58,3 +59,24 @@ Presentation-Advisor-Recommender-System/
     ├── interaction_data.csv        # User-item interactions
     ├── ratings_matrix.csv          # Pivot table for CF
     └── user_profiles.csv           # User preference data
+```
+📊 Dataset Overview
+The dataset contains 25,000 user-article interactions across 50 users and 500 articles, with ratings from 2.0 to 5.0 and an average of ~3.09.
+| File Name | Shape | Description |
+| :--- | :--- | :--- |
+| `interaction_data.csv` | 25,000 × 75 | Full interaction data with all user and item features |
+| `ratings_matrix.csv` | 3,000 × 5 | Clean ratings for CF-based models |
+| `recommendations.csv` | 100 × 26 | Article content features and metadata |
+| `user_profiles.csv` | 30 × 5 | User type, location, and preferences |
+| `presentations.csv` | 78 × 15 | Presentation issues flagged per user |
+
+Feature groups:
+| Group | Count | Examples |
+| :--- | :--- | :--- |
+| **User preferences** | 18 | readability, graphics, agenda, text-heavy |
+| **User types** | 7 | business, teacher, student, researcher |
+| **Presentation types** | 6 | formal, creative, technical, educational |
+| **Audience types** | 12 | academic, executive, kids, general |
+| **Article issues** | 12 | bullets, consistency, images, positioning |
+| **Time features** | 5 | hour_sin, hour_cos, day_sin, day_cos, hours_since_first |
+| **Problem weights** | 12 | exponential decay weighted issue flags |
