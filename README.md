@@ -80,3 +80,80 @@ Feature groups:
 | **Article issues** | 12 | bullets, consistency, images, positioning |
 | **Time features** | 5 | hour_sin, hour_cos, day_sin, day_cos, hours_since_first |
 | **Problem weights** | 12 | exponential decay weighted issue flags |
+
+## 🤖 Model Architectures
+
+---
+
+### 🟢 Model 1: Hybrid Baseline (CBF + CF)
+A hybrid approach combining collaborative filtering with content-based similarity.
+
+- 🔹 **CF Component:** User-user cosine similarity on rating matrix  
+- 🔹 **CBF Component:** Item-item cosine similarity on article features  
+
+**Prediction Formula:**
+
+Score = alpha * CF_score + (1 - alpha) * CBF_score
+alpha = 0.5
+
+
+---
+
+### 🔵 Model 2: Denoising Collaborative Filtering Autoencoder
+Learns latent user preferences from sparse rating data and reconstructs missing values.
+
+**Architecture:**
+
+Input(500)
+→ Dropout(0.2)
+→ Dense(256) → BatchNorm
+→ Dense(128)
+→ Latent(32)
+→ Dense(128)
+→ Dense(256)
+→ Output(500)
+
+
+---
+
+### 🟡 Model 3: Reinforcement Learning (DQN)
+Models recommendation as a sequential decision-making problem using Q-learning.
+
+**Architecture:**
+
+Dense(256)
+→ BatchNorm
+→ Dropout(0.2)
+→ Dense(128)
+→ BatchNorm
+→ Output(Q-values)
+
+
+---
+
+### 🔴 Model 4: Hybrid Multi-Tower Neural Network (Primary)
+Processes multiple feature groups independently before fusion.
+
+#### ⏱️ Time Encoding
+
+hour_sin = sin(2 * pi * hour / 24)
+hour_cos = cos(2 * pi * hour / 24)
+
+
+#### ⚖️ Problem Weighting
+
+weight = exp(-0.01 * days_since_interaction)
+
+
+---
+
+### 🟣 Model 5: Hybrid + Pre-Trained Embeddings
+Enhances Model 4 by incorporating pre-trained user and item embeddings using denoising autoencoders.
+
+---
+
+## 🚀 Key Takeaways
+- Combines **traditional + deep learning models**
+- Handles **cold-start + sparse data**
+- Uses **temporal + behavioral signals**
+- Demonstrates **performance improvement with hybrid architectures**
