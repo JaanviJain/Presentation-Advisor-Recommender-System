@@ -53,6 +53,13 @@ Presentation-Advisor-Recommender-System/
 ├── comparison_results/             # Cross-Model Evaluation
 │   ├── comparison.ipynb            # Benchmarking all 5 models
 │   └── all_models_comparison.png   # Final performance leaderboard
+├── plots/                          # EDA Plota
+│   ├── all_models_comparison.png
+│   ├── eda_article_distribution.jpg
+│   ├── eda_ratings.jpg
+│   ├── eda_temporal_trends.jpg
+│   ├── eda_user_preferences.jpg
+│   └── eda_user_types.jpg
 │
 └── presentation_data/              # Core Datasets
     ├── presentations.csv           # Content metadata
