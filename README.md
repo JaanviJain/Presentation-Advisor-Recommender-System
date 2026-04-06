@@ -203,3 +203,183 @@ All models are evaluated on a 70/15/15 train/validation/test split with a held-o
 
 ---
 
+## 📊 Exploratory Data Analysis (EDA)
+
+A detailed exploratory analysis was performed to understand user behavior, interaction patterns, and feature distributions. These insights directly influenced model design choices such as hybrid architectures, temporal encoding, and feature engineering.
+
+---
+
+### 📉 Rating Distribution
+
+The rating values range from **2.0 to 5.0**, with a mean around **3.0**, indicating a realistic and moderately positive feedback distribution. The data shows a slight right skew, suggesting users tend to give average-to-good ratings rather than extreme values.
+
+<p align="center">
+  <img src="plots/eda_ratings.jpg" width="650"/>
+</p>
+
+**Insights:**
+- No extreme rating bias → suitable for regression-based models  
+- Mid-range clustering → harder prediction problem (less trivial patterns)  
+- Justifies use of deep learning over simple heuristics  
+
+---
+
+### 📊 Article Interaction Distribution
+
+Most articles receive a **uniform number of ratings**, while a small subset shows slightly higher engagement.
+
+<p align="center">
+  <img src="plots/eda_article_distribution.jpg" width="650"/>
+</p>
+
+**Insights:**
+- Dataset is relatively balanced → reduces popularity bias  
+- No heavy long-tail problem → CF models remain effective  
+- Ensures fair learning across items  
+
+---
+
+### 🎯 User Preferences Analysis
+
+User preference features highlight the most common presentation challenges such as **readability, graphics, and agenda structuring**.
+
+<p align="center">
+  <img src="plots/eda_user_preferences.jpg" width="650"/>
+</p>
+
+**Insights:**
+- Strong signal for **problem-driven recommendations**  
+- Justifies inclusion of a dedicated **problem feature tower**  
+- Helps model generate actionable and personalized suggestions  
+
+---
+
+### 👥 User Types & Presentation Styles
+
+The dataset includes multiple user types (business, student, technical, etc.) and presentation styles (formal, creative, educational).
+
+<p align="center">
+  <img src="plots/eda_user_types.jpg" width="650"/>
+</p>
+
+**Insights:**
+- High diversity → rules out one-size-fits-all recommendation  
+- Supports need for **personalized embeddings**  
+- Validates multi-tower architecture (separating user & item signals)  
+
+---
+
+### ⏱️ Temporal Analysis
+
+User interactions span across a long time range, with noticeable fluctuations in activity and rating patterns.
+
+<p align="center">
+  <img src="plots/eda_temporal_trends.jpg" width="650"/>
+</p>
+
+**Insights:**
+- User preferences evolve over time → static models are insufficient  
+- Justifies **time-aware features (sin/cos encoding)**  
+- Supports use of **exponential decay weighting** for recent interactions  
+
+---
+
+## 🔍 Key Takeaways
+
+- 📌 Ratings are moderately distributed → non-trivial prediction task  
+- 📌 User behavior is **multi-dimensional (type + preference + time)**  
+- 📌 Temporal dynamics are critical → recent interactions matter more  
+- 📌 Problem-specific features strongly influence recommendations  
+- 📌 Dataset structure supports advanced hybrid models over simple CF  
+
+---
+
+## 🚀 Impact on Model Design
+
+Based on EDA findings:
+
+- Hybrid models were used to combine **collaborative + content signals**  
+- Multi-tower architecture was designed to **avoid feature interference**  
+- Temporal encoding and decay were added to capture **behavior evolution**  
+- Problem-weighted features were introduced to ensure **relevance**  
+
+## 🔍 Critical Analysis
+
+### 🚀 Why Deep Models Outperform Traditional Approaches
+The dataset contains rich contextual features such as user type, audience type, presentation style, temporal patterns, and problem history. Traditional methods like collaborative filtering (CF) and content-based filtering (CBF) fail to fully capture these multi-dimensional signals.
+
+The hybrid multi-tower architecture addresses this by processing each feature group independently, preventing high-cardinality features from dominating simpler binary signals during training.
+
+---
+
+### ⚠️ Factors Affecting Performance Metrics
+
+- **Limited dataset size:** 25,000 interactions across only 50 users  
+- **Compressed rating scale:** Ratings range from 2–5 (no extreme values)  
+- **Weak collaborative signal:** Small user base limits CF effectiveness  
+- **Feature dependency:** Models rely more on content and contextual features  
+
+---
+
+### 📈 Future Improvements
+
+- Increase number of users and articles to strengthen collaborative learning  
+- Incorporate real user feedback for tuning utility-based scoring  
+- Apply sequential modeling (e.g., Transformers) on user interaction history  
+- Use contrastive learning for better representation of presentation issues  
+
+---
+
+## ⚙️ Installation
+
+```bash id="u3r7xp"
+git clone https://github.com/yourusername/presentation-advisor-recommender.git
+cd presentation-advisor-recommender
+pip install -r requirements.txt 
+📦 Requirements
+tensorflow>=2.10.0
+numpy>=1.23.0
+pandas>=1.5.0
+scikit-learn>=1.1.0
+matplotlib>=3.6.0
+seaborn>=0.12.0
+tqdm>=4.64.0
+▶️ How to Run
+# Step 1 — EDA
+jupyter notebook notebooks/01_EDA.ipynb
+
+# Step 2 — Model 1: CBF + CF
+jupyter notebook notebooks/02_Model1_CBF_CF.ipynb
+
+# Step 3 — Model 2: Autoencoder
+jupyter notebook notebooks/03_Model2_Autoencoder.ipynb
+
+# Step 4 — Model 3: DQN
+jupyter notebook notebooks/04_Model3_DQN.ipynb
+
+# Step 5 — Model 4: Hybrid Multi-Tower
+jupyter notebook notebooks/05_Model4_Hybrid.ipynb
+
+# Step 6 — Model 5: Hybrid + Embeddings
+jupyter notebook notebooks/06_Model5_Hybrid_Emb.ipynb
+
+# Step 7 — Final Comparison
+jupyter notebook notebooks/07_Final_Comparison.ipynb
+📥 Dataset (Kaggle)
+kaggle datasets download janvijain96/presentation-advisor-data
+
+Each notebook automatically saves metrics to saved_models/.
+The final comparison notebook loads all saved JSON files to generate results without retraining.
+```
+
+## 👩‍💻 Author
+
+Janvi Jain
+BTech – Data Science
+
+## 📚 Reference
+
+Vlahova-Takova, M., & Lazarova, M. (2025).
+A Recommender System Model for Presentation Advisor Application Based on Multi-Tower Neural Network and Utility-Based Scoring.
+Electronics, 14(13), 2528.
+https://doi.org/10.3390/electronics14132528
