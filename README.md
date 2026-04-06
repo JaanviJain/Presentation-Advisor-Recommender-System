@@ -344,7 +344,9 @@ scikit-learn>=1.1.0
 matplotlib>=3.6.0
 seaborn>=0.12.0
 tqdm>=4.64.0
+```
 ▶️ How to Run
+```
 # Step 1 — EDA
 jupyter notebook notebooks/01_EDA.ipynb
 
@@ -365,12 +367,14 @@ jupyter notebook notebooks/06_Model5_Hybrid_Emb.ipynb
 
 # Step 7 — Final Comparison
 jupyter notebook notebooks/07_Final_Comparison.ipynb
+```
 📥 Dataset (Kaggle)
+```
 kaggle datasets download janvijain96/presentation-advisor-data
-
+```
 Each notebook automatically saves metrics to saved_models/.
 The final comparison notebook loads all saved JSON files to generate results without retraining.
-```
+
 
 ## 👩‍💻 Author
 
