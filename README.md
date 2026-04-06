@@ -1,5 +1,5 @@
 # Presentation-Advisor-Recommender-System
-📌 Project Description
+Project Description
 
 The Presentation Advisor Recommender System is a multi-model framework that enhances users’ presentation skills through personalized article recommendations. It implements and compares five approaches, ranging from traditional filtering methods to advanced deep learning models.
 
@@ -9,8 +9,12 @@ The pipeline includes a hybrid content-based and collaborative filtering baselin
 
 All models are evaluated using MAE, MSE, and RMSE, with EDA supporting model design. Overall, the project focuses on building a scalable, personalized, and high-performance recommendation system for presentation skill improvement.
 
-🎯 Objective
-Implement five recommendation models with increasing complexity
-Compare model performance using MAE, MSE, and RMSE on a common test set
-Analyze the impact of temporal encoding, problem-sequence weighting, and utility-based scoring
-Demonstrate that hybrid deep learning architectures outperform traditional and reinforcement learning approaches in this domain
+Objective
+This project builds and evaluates a complete recommender system pipeline for a Presentation Advisor application:
+
+* Implement five recommendation models of increasing complexity
+* Compare all models on MAE, MSE, and RMSE across a shared test set
+* Analyze the effect of temporal encoding, problem sequence weighting, and utility-based scoring
+* Validate that deep hybrid architectures outperform traditional and RL-based approaches on this domain
+
+
