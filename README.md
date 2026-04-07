@@ -1,5 +1,5 @@
 # Presentation-Advisor-Recommender-System
-📌Project Description
+Project Description
 
 The Presentation Advisor Recommender System is a multi-model framework that enhances users’ presentation skills through personalized article recommendations. It implements and compares five approaches, ranging from traditional filtering methods to advanced deep learning models.
 
@@ -9,7 +9,7 @@ The pipeline includes a hybrid content-based and collaborative filtering baselin
 
 All models are evaluated using MAE, MSE, and RMSE, with EDA supporting model design. Overall, the project focuses on building a scalable, personalized, and high-performance recommendation system for presentation skill improvement.
 
-🎯Objective
+Objective
 This project builds and evaluates a complete recommender system pipeline for a Presentation Advisor application:
 
 * Implement five recommendation models of increasing complexity
@@ -92,7 +92,7 @@ Feature groups:
 
 ---
 
-### 🟢 Model 1: Hybrid Baseline (CBF + CF)
+###  Model 1: Hybrid Baseline (CBF + CF)
 A hybrid approach combining collaborative filtering with content-based similarity.
 
 - 🔹 **CF Component:** User-user cosine similarity on rating matrix  
@@ -106,7 +106,7 @@ alpha = 0.5
 
 ---
 
-### 🔵 Model 2: Denoising Collaborative Filtering Autoencoder
+###  Model 2: Denoising Collaborative Filtering Autoencoder
 Learns latent user preferences from sparse rating data and reconstructs missing values.
 
 **Architecture:**
@@ -123,7 +123,7 @@ Input(500)
 
 ---
 
-### 🟡 Model 3: Reinforcement Learning (DQN)
+###  Model 3: Reinforcement Learning (DQN)
 Models recommendation as a sequential decision-making problem using Q-learning.
 
 **Architecture:**
@@ -138,28 +138,28 @@ Dense(256)
 
 ---
 
-### 🔴 Model 4: Hybrid Multi-Tower Neural Network (Primary)
+###  Model 4: Hybrid Multi-Tower Neural Network (Primary)
 Processes multiple feature groups independently before fusion.
 
-#### ⏱️ Time Encoding
+####  Time Encoding
 
 hour_sin = sin(2 * pi * hour / 24)
 hour_cos = cos(2 * pi * hour / 24)
 
 
-#### ⚖️ Problem Weighting
+####  Problem Weighting
 
 weight = exp(-0.01 * days_since_interaction)
 
 
 ---
 
-### 🟣 Model 5: Hybrid + Pre-Trained Embeddings
+###  Model 5: Hybrid + Pre-Trained Embeddings
 Enhances Model 4 by incorporating pre-trained user and item embeddings using denoising autoencoders.
 
 ---
 
-## 🚀 Key Takeaways
+##  Key Takeaways
 - Combines **traditional + deep learning models**
 - Handles **cold-start + sparse data**
 - Uses **temporal + behavioral signals**
@@ -173,21 +173,21 @@ All models are evaluated on a 70/15/15 train/validation/test split with a held-o
 
 | Model                     | MAE     | MSE     | RMSE    | Paper MAE | Beats Paper |
 |--------------------------|--------|--------|--------|-----------|-------------|
-| CBF + CF (Hybrid)        | 0.5255 | 0.3908 | 0.6252 | 1.13      | ✅ Yes       |
-| Autoencoder              | 0.7861 | 0.7964 | 0.8924 | 3.05      | ✅ Yes       |
-| DQN                      | 1.4968 | 3.3036 | 1.8176 | 3.22      | ✅ Yes       |
-| Hybrid Multi-Tower       | 0.0734 | 0.0259 | 0.1611 | 0.11      | ✅ Yes       |
-| Hybrid + Embeddings      | 0.3324 | 0.2514 | 0.5014 | 0.49      | ✅ Yes       |
+| CBF + CF (Hybrid)        | 0.5255 | 0.3908 | 0.6252 | 1.13      |  Yes       |
+| Autoencoder              | 0.7861 | 0.7964 | 0.8924 | 3.05      |  Yes       |
+| DQN                      | 1.4968 | 3.3036 | 1.8176 | 3.22      |  Yes       |
+| Hybrid Multi-Tower       | 0.0734 | 0.0259 | 0.1611 | 0.11      |  Yes       |
+| Hybrid + Embeddings      | 0.3324 | 0.2514 | 0.5014 | 0.49      |  Yes       |
 
 ---
 
 ### ⚡ Key Observations
 
-- 🏆 **Hybrid Multi-Tower model performs best** with the lowest MAE (0.0734)
-- 📉 Deep learning models significantly outperform traditional methods
-- 🤖 Autoencoder improves over baseline but is less effective than hybrid models
-- ⚠️ DQN underperforms due to complexity and reward sparsity
-- 🚀 All models outperform the research paper benchmarks
+-  **Hybrid Multi-Tower model performs best** with the lowest MAE (0.0734)
+-  Deep learning models significantly outperform traditional methods
+-  Autoencoder improves over baseline but is less effective than hybrid models
+-  DQN underperforms due to complexity and reward sparsity
+-  All models outperform the research paper benchmarks
 
 ---
 
@@ -286,11 +286,11 @@ User interactions span across a long time range, with noticeable fluctuations in
 
 ## 🔍 Key Takeaways
 
-- 📌 Ratings are moderately distributed → non-trivial prediction task  
-- 📌 User behavior is **multi-dimensional (type + preference + time)**  
-- 📌 Temporal dynamics are critical → recent interactions matter more  
-- 📌 Problem-specific features strongly influence recommendations  
-- 📌 Dataset structure supports advanced hybrid models over simple CF  
+-  Ratings are moderately distributed → non-trivial prediction task  
+-  User behavior is **multi-dimensional (type + preference + time)**  
+-  Temporal dynamics are critical → recent interactions matter more  
+-  Problem-specific features strongly influence recommendations  
+-  Dataset structure supports advanced hybrid models over simple CF  
 
 ---
 
